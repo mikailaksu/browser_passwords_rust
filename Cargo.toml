@@ -1,0 +1,40 @@
+[package]
+name = "browser_passwords_rust"
+version = "0.2.0"
+description = "Get username & password from Browsers."
+keywords = ["browsers", "hack", "password", "utils"]
+categories = ["command-line-utilities"]
+authors = ["Mikail AKSU"]
+edition = "2021"
+license = "MIT"
+default-run = "browser_passwords_rust"
+
+[[bin]]
+name = "browser_passwords_rust"
+path = "src/main.rs"
+
+[dependencies]
+aes-gcm = "0.10.1"
+base64 = "0.13.0"
+serde = { version = "1.0.143", features = ["derive"] }
+serde_json = "1.0.83"
+sqlite = "0.27.0"
+tabled =  "0.8.0"
+tempdir = "0.3.7"
+directories = "4.0"
+
+[target.'cfg(windows)'.dependencies]
+user32-sys = "0.2.0"
+winapi = { version = "0.3.9", features = ["dpapi", "wincrypt", "winuser"] }
+
+[package.metadata.winres]
+OriginalFilename = "browser_passwords_rust.exe"
+ProductName = "browser_passwords_rust"
+FileDescription = "browser_passwords_rust."
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = 'z' # Optimize for size
+panic = "abort"
+strip = "symbols"
