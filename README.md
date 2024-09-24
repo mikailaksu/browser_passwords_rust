@@ -5,6 +5,7 @@ Desteklenen tarayıcılar:
 * Opera Tüm Versionları (GX, NEON, CLASSIC).
 * Chrome
 * Brave
+* Microsoft Edge
 
 Unuttuğunuz şifreleri görenizi sağlar.
 
